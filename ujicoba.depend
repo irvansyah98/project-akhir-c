@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1514532345 source:c:\tugas kuliah\coding\ujicoba\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
