@@ -35,7 +35,7 @@ void inputData()
     {
         kel=fopen("nama.txt","r");
         nomor=fopen("harga.txt","r");
-        for(i=0;i<7+jmldatabaru;i++)
+        for(i=0;i<10+jmldatabaru;i++)
         {
             fgets(data[i].nama_makanan,50,kel);
             n=strlen(data[i].nama_makanan);
@@ -79,7 +79,7 @@ void caridata()
         {
             printf("Masukkan HARGA: ");scanf("%d",&harga1);
             system("cls");
-            for(i=0;i<7+jmldatabaru;i++)
+            for(i=0;i<10+jmldatabaru;i++)
             {if(harga1==data[i].harga)
                 {
                     printf("Makanan");
@@ -129,7 +129,7 @@ void urutkandata()
     printf("Urutkan Berdasarkan:\n1.Harga Makanan\n");
     printf("Masukkan Pilihan: ");scanf("%d",&pil);
     anyar=fopen("baru.txt","r");
-    for(i=0;i<7+jmldatabaru;i++)
+    for(i=0;i<10+jmldatabaru;i++)
         {
             fgets(data[i].urutno,100,anyar);
             n=strlen(data[i].urutno);
@@ -139,9 +139,9 @@ void urutkandata()
     if(pil==1)
     {
 
-        for(i=1;i<=7+jmldatabaru-1;i++)
+        for(i=1;i<=10+jmldatabaru-1;i++)
      {
-         for(j=i;j<7+jmldatabaru;j++)
+         for(j=i;j<10+jmldatabaru;j++)
          {
              if(data[i-1].harga<data[j].harga)
              {
@@ -157,9 +157,9 @@ void urutkandata()
         printf("==============================================================================================\n");
         printf("NO\t HARGA\t NAMA MAKANAN\t\t\t\n");
         printf("==============================================================================================\n");
-        for(i=0;i<7+jmldatabaru;i++)
+        for(i=0;i<10+jmldatabaru;i++)
         {
-            printf("%d  %s\n\n\n\n",i+1,data[i].urutno);
+            printf("%d  %s\n",i+1,data[i].urutno);
         }
         printf("===============================================================================================\n");
         opsi();
@@ -181,7 +181,7 @@ void tampildata()
         kel=fopen("nama.txt","r");
         nomor=fopen("harga.txt","r");
         anyar=fopen("baru.txt","w");
-        for(i=0;i<7+jmldatabaru;i++)
+        for(i=0;i<10+jmldatabaru;i++)
         {
             fgets(nama,100,kel);
             n=strlen(nama);
