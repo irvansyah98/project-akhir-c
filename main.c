@@ -126,49 +126,38 @@ void appen()
 }
 void urutkandata()
 {
-    printf("Urutkan Berdasarkan:\n1.Harga Makanan\n");
-    printf("Masukkan Pilihan: ");scanf("%d",&pil);
-    anyar=fopen("baru.txt","r");
-    for(i=0;i<10+jmldatabaru;i++)
-        {
-            fgets(data[i].urutno,100,anyar);
-            n=strlen(data[i].urutno);
-            data[i].urutno[n-1]='\0';
-        }
-        fclose(anyar);
-    if(pil==1)
-    {
+    int i1=0, j1=0, n1, t1;
 
-        for(i=1;i<=10+jmldatabaru-1;i++)
-     {
-         for(j=i;j<10+jmldatabaru;j++)
-         {
-             if(data[i-1].harga<data[j].harga)
-             {
-                 printf("Masuk");
-                 strcpy(sort,data[i-1].urutno);
-                 strcpy(data[i-1].urutno,data[j].urutno);
-                 strcpy(data[j].urutno,sort);
-             }
-         }
-     }
-        system("cls");
-        printf("Restoran\n");
-        printf("==============================================================================================\n");
-        printf("NO\t HARGA\t NAMA MAKANAN\t\t\t\n");
-        printf("==============================================================================================\n");
-        for(i=0;i<10+jmldatabaru;i++)
-        {
-            printf("%d  %s\n",i+1,data[i].urutno);
-        }
-        printf("===============================================================================================\n");
-        opsi();
-    }
-    else
-    {
-        printf("Pilihan Tidak Ada! kembali ke menu!");
-        opsi();
-    }
+	printf ("\n Berapa data yang ingin anda sort : ");
+	scanf ("%d", &n1);
+	printf ("\n");
+
+	for (j1=0 ; j1<(n1-1) ; j1++)
+	{
+		for (i1=0 ; i1<(n1-1) ; i1++)
+		{
+			if (data[i1+1].harga < data[i1].harga)
+			{
+				t1 = data[i1].harga;
+				data[i1].harga = data[i1 + 1].harga;
+				data[i1 + 1].harga = t1;
+			}
+		}
+	}
+
+	printf ("\n Ascending order: \n");
+	for (i1=0 ; i1<n1 ; i1++)
+	{
+		printf (" %d\n", data[i1].harga);
+	}
+
+	printf ("\n\n Descending order: \n");
+	for (i1=n1 ; i1>0 ; i1--)
+	{
+		printf (" %d\n", data[i1-1].harga);
+	}
+
+      return 0;
 }
 void tampildata()
 {

@@ -5,4 +5,6 @@ Nasi Campur
 Nasi Goreng		
 Nasi Gudeg		
 Nasi Kucing		
-NAsi Nasi		
+Nasi Sambel		
+Nasi Sambel	
+Nasi Goreng2		
